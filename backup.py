@@ -5,8 +5,8 @@ import schedule
 import time
 
 
-source_dir = "C:\Users\aaron\Pictures\Screenshots"
-destination_dir = "C:\Users\aaron\Desktop\Backups"
+source_dir = "C:/Users/aaron/Pictures/Tests"
+destination_dir = "C:/Users/aaron/Desktop/Backups"
 
 def copy_folder_to_directory(source, dest):
     today = datetime.date.today()
@@ -18,9 +18,10 @@ def copy_folder_to_directory(source, dest):
     except FileExistsError:
         print(f"Folder already exists in: {dest}")
 
-
-schedule.every().day.at("18:57").do(lambda: copy_folder_to_directory(source_dir, destination_dir))
+schedule.every().day.at("20:14").do(lambda:
+copy_folder_to_directory(source_dir, destination_dir))
 
 while True:
     schedule.run_pending()
     time.sleep(60)
+
